@@ -7,6 +7,25 @@ numbers, so a baby of 5 months, will have an ascribed ‘age’ of 0. Return a n
 difference between the youngest and oldest age].
 */
 
-function differenceInAges(ages){
+const differenceInAges = (ages) => {
+  let youngest;
+  let oldest;
+  let difference;
+  const arr = [];
+  for(let i = 0; i < ages.length; i++) {
+    if(i === 0) {
+      youngest = ages[i];
+      oldest = ages[i];
+    }
+    if(ages[i] < youngest) {
+      youngest = ages[i];
+    }
+    if(ages[i] > oldest) {
+      oldest = ages[i];
+    }
+  }
+  difference = oldest - youngest;
+  arr.push(youngest, oldest, difference);
 
+  return arr;
 }
